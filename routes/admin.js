@@ -36,13 +36,13 @@ router.delete('/del', (req, res) => {
   .then(num => {
     if (num) {
       console.log('User deleted')
-      res.redirect('admin')
+      res.redirect('/')
     } else {
       console.log('User with that ID doesnt exits')
     }
   })
   .catch(err => {
-    console.log(err)
+    console.log('err')
   })
 })
 

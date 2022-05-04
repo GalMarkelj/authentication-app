@@ -31,7 +31,6 @@ function removeUser(id) {
     .del()
 }
 
-
 async function addUserData(req) {
   try {
     await db('user_data').insert(req)

@@ -21,6 +21,7 @@ const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const userMainRouter = require('./routes/user-main')
 const logoutRouter = require('./routes/logout')
+const adminRouter = require('./routes/admin')
 
 // View engien set
 app.set('view engine', 'ejs')
@@ -48,5 +49,6 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/user-main', userMainRouter)
 app.use('/logout', logoutRouter)
+app.use('/admin', adminRouter)
 
 app.listen(HTTP_port, () => console.log(chalk.cyan(`Server running on port ${HTTP_port}`)) )

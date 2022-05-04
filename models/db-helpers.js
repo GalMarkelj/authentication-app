@@ -32,7 +32,7 @@ function removeUser(id) {
 }
 
 
-async function addData(req) {
+async function addUserData(req) {
   try {
     await db('user_data').insert(req)
     return 'success'
@@ -40,7 +40,18 @@ async function addData(req) {
     console.log(err)
     return 'error'
   }
+}
 
+function getUserData(user_id) {
+  return db('user_data')
+    .where({ user_id })
+    .first()
+}
+
+function updateUserData(user_id, changes) {
+  return db('user_data')
+    .where({ user_id })
+    .update(changes)
 }
 
 module.exports = {
@@ -49,5 +60,7 @@ module.exports = {
   getUserByUsername,
   getUserById,
   removeUser,
-  addData
+  addUserData,
+  getUserData,
+  updateUserData
 }

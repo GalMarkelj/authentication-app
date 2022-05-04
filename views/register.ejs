@@ -1,0 +1,16 @@
+<h1>Register</h1>
+
+<% if(typeof error != 'undefined') { %>
+  <% error.forEach(function(err) { %>
+    <%= err.msg %>
+  <% }) %>
+<% } %>
+
+<form action="/register" method="POST">
+  <input type="text" placeholder="username" name="username" id="username" autofocus>
+  <input type="email" placeholder="email" name="email" id="email">
+  <input type="password" placeholder="password" name="password" id="password">
+  <input type="password" placeholder="Repeat password" name="password_rpt" id="password_rpt">
+  <button type="submit">Register</button>
+</form>
+<a href="login">Log in</a>

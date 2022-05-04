@@ -2,3 +2,51 @@
 <form action="/logout?_method=DELETE" method="POST">
   <button type="submit">Log out</button>
 </form>
+
+<br>
+
+<% if (!data) {%> 
+  <form action="/user-main" method="POST">
+    <label for="sex">Sex :</label>
+    <input type="text" id="sex" name="sex">
+    <br>
+    <label for="address">Address :</label>
+    <input type="text" id="address" name="address">
+    <br>
+    <label for="town">Town :</label>
+    <input type="text" id="town" name="town">
+    <br>
+    <label for="phone_number">Phone number :</label>
+    <input type="number" id="phone_number" name="phone_number">
+    <br>
+    <br>
+    <button>Insert</button>
+  </form>
+
+<% } else { %> 
+
+  <form action="/user-main/update?_method=PATCH" method="POST">
+    <label for="sex">Sex: <%= data.sex %> </label>
+    <br>
+    <input type="text" id="sex" name="sex" placeholder="Type changes">
+    <br>
+    <br>
+    <label for="address">Address: <%= data.address %></label>
+    <br>
+    <input type="text" id="address" name="address" placeholder="Type changes">
+    <br>
+    <br>
+    <label for="town">Town: <%= data.town %></label>
+    <br>
+    <input type="text" id="town" name="town" placeholder="Type changes">
+    <br>
+    <br>
+    <label for="phone_number">Phone number: <%= data.phone_number %></label>
+    <br>
+    <input type="number" id="phone_number" name="phone_number" placeholder="Type changes">
+    <br>
+    <br>
+    <button type="submit">Update</button>
+  </form>
+
+<% } %> 

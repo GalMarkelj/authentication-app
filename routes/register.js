@@ -26,7 +26,7 @@ router.post('/', [
     const password = req.body.password
     const password_rpt = req.body.password_rpt
     if (password !== password_rpt) {
-        throw new Error('Passwords do not match')
+      throw new Error('Passwords do not match')
     }
 
   })

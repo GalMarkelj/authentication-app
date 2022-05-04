@@ -1,0 +1,38 @@
+<h1> <%= admin %> privileges</h1>
+
+<form action="/logout?_method=DELETE" method="POST">
+  <button type="submit">Log out</button>
+</form>
+
+<h3>All the users</h3>
+
+<% if (allUsers) { %> 
+  <table>
+    <tr>
+      <td>User ID</td>
+      <td>Username</td>
+      <td>Email</td>
+      <td>Created</td>
+    </tr>
+  <% allUsers.forEach(user => { %> 
+    <tr>
+      <td> <%= user.id %> </td>
+      <td> <%= user.username %> </td>
+      <td> <%= user.email %> </td>
+      <td> <%= user.created_at %> </td>
+    </tr>
+  <% }) %> 
+  </table>
+<% } %> 
+
+<br>
+
+<form action="/admin/del?_method=DELETE" method="POST">
+  <label for="delete">Delete user</label>
+  <br>
+  <input type="number" id="delete" name="delete" placeholder="Enter User ID">
+  <br>
+  <br>
+  <button type="submit">Delete</button>
+</form>
+

@@ -8,6 +8,9 @@ router.get('/', authenticated, async (req, res) => {
   const response = () => {
     req.user
     .then(user => {
+      if (user.username == 'admin') {
+        res.redirect('admin')
+      }
       User.getUserData(user.id)
       .then(data => {
         res.render(

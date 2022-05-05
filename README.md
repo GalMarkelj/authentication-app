@@ -3,14 +3,30 @@ I made this application as a school project and learning project, to learn inter
 
 # About the application
 
-## SETUP
-  1. Navigate your terminal to folder with projects
-  2. Run git clone of the application
-  3. Navigate to application folder cd authentication-app
-  4. Install the dependencies npm install
-  5. Create your own .env folder and insert your own secerect as SESSION_SECRET
-  6. Run in terminal npm run devstart
-  7. Visit localhost:8050
+## Requirements
+- git
+- nodeJs, npm
+
+
+## Prerequisites
+  1. Clone the project
+  
+    git clone https://github.com/GalMarkelj/authentication-app.git
+    cd ./authentication-app
+    
+  2. Install the dependencies
+
+    npm install
+    
+  3. Store your secret in an .env file
+
+    echo "SESSION_SECRET=<your-secret>  >  ./.env"
+    
+  4. Start the server
+  
+    npm run devstart
+    
+  5. Visit localhost:8050
 
 ## About the application
 Meaning of the application is to learn and preform CRUD operations with the database.
